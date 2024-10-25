@@ -16,68 +16,60 @@ img {
 
 .grid img {
   display: block;
+  margin: 0 auto;
 }
 
 #showcase .box-1 {
-  background: url("/images/image-01.jpg");
   grid-column: 1;
   grid-row: 1/3;
   animation-duration: 6s;
   animation-name: slidein;
 }
 #showcase .box-2 {
-  background: url("/images/image-02.jpg");
   grid-column: 2;
   grid-row: 1;
   animation-duration: 6s;
   animation-name: slidein;
 }
 #showcase .box-3 {
-  background: url("/images/image-03.jpg");
   grid-column: 3;
   grid-row: 1;
   animation-duration: 6s;
   animation-name: slidein;
 }
 #showcase .box-4 {
-  background: url("/images/image-04.jpg");
   grid-column: 4;
-  grid-row: 1/4;
+  grid-row: 1;
   animation-duration: 6s;
   animation-name: slidein;
 }
 #showcase .box-5 {
-  background: url("/images/image-05.jpg");
   grid-column: 2;
   grid-row: 2/5;
   animation-duration: 6s;
   animation-name: slidein;
 }
 #showcase .box-6 {
-  background: url("/images/image-06.jpg");
   grid-column: 3;
   grid-row: 2/4;
   animation-duration: 6s;
   animation-name: slidein;
 }
 #showcase .box-7 {
-  background: url("/images/image-07.jpg");
   grid-column: 1;
-  grid-row: 3/5;
+  grid-row: 2;
   animation-duration: 6s;
   animation-name: slidein;
 }
 #showcase .box-8 {
-  background: url("/images/image-08.jpg");
   grid-column: 3;
-  grid-row: 4/5;
+  grid-row: 2;
   animation-duration: 6s;
   animation-name: slidein;
 }
 #showcase .box-9 {
-  background: url("/images/image-09.jpg");
   grid-column: 4;
-  grid-row: 4;
+  grid-row: 2;
   animation-duration: 6s;
   animation-name: slidein;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -95,6 +87,18 @@ img {
   background-position: center;
   background-size: cover;
 }
+#showcase .box-1 img,
+#showcase .box-2 img,
+#showcase .box-3 img,
+#showcase .box-4 img,
+#showcase .box-5 img,
+#showcase .box-6 img,
+#showcase .box-7 img,
+#showcase .box-8 img,
+#showcase .box-9 img {
+  width: 50%;
+  height: 50vh;
+}
 
 @keyframes slidein {
   from {
@@ -107,6 +111,25 @@ img {
     width: 100%;
   }
 }
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+img {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+  animation-timeline: --image;
+  animation-name: show;
+  animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+}
+
 #footer {
   text-align: center;
   padding: 3rem;
